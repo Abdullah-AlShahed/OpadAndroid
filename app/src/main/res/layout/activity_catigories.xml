@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_offwhite_background_color"
+    tools:viewBindingIgnore="true">
+
+    <ImageView
+        android:id="@+id/android_toolpar"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/android_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 1- arrange Pics using layout constrains-->
+    <ImageView
+        android:id="@+id/calculator_image_view"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/calculator"
+        app:layout_constraintEnd_toStartOf="@id/xo_image_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/android_toolpar" />
+
+    <TextView
+        android:id="@+id/calculator_text_view"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/app_taxt_color"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:text="Calculator"
+        android:textColor="@color/app_offwhite_background_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/calculator_image_view"
+        app:layout_constraintEnd_toEndOf="@id/calculator_image_view" />
+
+    <ImageView
+        android:id="@+id/xo_image_view"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/xo_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/calculator_image_view"
+        app:layout_constraintTop_toBottomOf="@id/android_toolpar"
+
+        />
+
+    <TextView
+        android:id="@+id/xo_text_view"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/app_taxt_color"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:text="@string/x_o_game_text"
+        android:textColor="@color/app_offwhite_background_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/xo_image_view"
+        app:layout_constraintEnd_toEndOf="@id/xo_image_view" />
+
+
+    <!-- 2- arrange Pics using Chain-->
+    <!-- No need for layout_constraintHorizontal_chainStyle but as an example-->
+    <ImageView
+        android:id="@+id/moov"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/moov"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintEnd_toStartOf="@+id/posts_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculator_image_view" />
+
+    <ImageView
+        android:id="@+id/posts_image"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/postsimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/moov"
+        app:layout_constraintTop_toBottomOf="@id/xo_image_view" />
+
+    <TextView
+        android:id="@+id/posts_text_view"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/app_taxt_color"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:text="VIEW POSTS"
+        android:textColor="@color/app_offwhite_background_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/posts_image"
+        app:layout_constraintEnd_toEndOf="@id/posts_image" />
+
+
+    <!-- 3- arrange Pics using Guideline-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/bicycle_image"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bicycle"
+        app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moov" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/spirit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/middle_guideline"
+        app:layout_constraintTop_toBottomOf="@id/posts_image" />
+
+    <!-- 4- arrange Pics using linear layout -->
+    <LinearLayout
+        android:id="@+id/second_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bicycle_image">
+
+        <ImageView
+            android:id="@+id/ideas_image"
+            android:layout_width="0dp"
+            android:layout_height="150sp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="100"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/idea" />
+
+        <ImageView
+            android:id="@+id/triangle_image"
+            android:layout_width="0dp"
+            android:layout_height="150sp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="100"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/triangle_colors" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/catigories_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:background="@color/app_taxt_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_row"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

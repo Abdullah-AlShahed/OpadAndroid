@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".XOGameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/players_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/app_taxt_color"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Player (1)"
+            android:textColor="@color/app_offwhite_background_color"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_scoreplayer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_scoreplayer1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Score (0)"
+            android:tag="0"
+            android:textAlignment="center"
+            android:textColor="@color/app_offwhite_background_color"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_player1"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Player (2)"
+            android:textColor="@color/app_offwhite_background_color"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_scoreplayer2"
+            app:layout_constraintStart_toEndOf="@id/tv_player1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_scoreplayer2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Score (0)"
+            android:tag="0"
+            android:textAlignment="center"
+            android:textColor="@color/app_offwhite_background_color"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_scoreplayer1"
+            app:layout_constraintTop_toBottomOf="@id/tv_player2"
+            app:layout_constraintWidth_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/xoline1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/players_header">
+
+        <Button
+            android:id="@+id/xo1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="1"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="2"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="3"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/xoline2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/xoline1">
+
+        <Button
+            android:id="@+id/xo4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="4"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="5"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="6"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/xoline3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/xoline2">
+
+        <Button
+            android:id="@+id/xo7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="7"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="8"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+        <Button
+            android:id="@+id/xo9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/app_offwhite_background_color"
+            android:onClick="onXOButtonClicked"
+            android:tag="9"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="80sp"
+            tools:text="x" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

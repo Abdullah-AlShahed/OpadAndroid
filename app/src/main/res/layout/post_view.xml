@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Height of root element must not be match parent for the recyclerview-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="12dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_round_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            toools:src="@drawable/user_icon" />
+
+        <TextView
+            android:id="@+id/post_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/app_taxt_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/post_round_image"
+            app:layout_constraintTop_toTopOf="@id/post_round_image"
+            toools:text="User Name" />
+
+        <TextView
+            android:id="@+id/post_launch_time_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/post_round_image"
+            app:layout_constraintStart_toEndOf="@id/post_round_image"
+            app:layout_constraintTop_toBottomOf="@id/post_user_name"
+            toools:text="12" />
+
+        <TextView
+            android:id="@+id/post_launch_time_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/post_launch_time_number"
+            app:layout_constraintStart_toEndOf="@id/post_launch_time_number"
+            app:layout_constraintTop_toBottomOf="@id/post_user_name"
+            toools:text="h" />
+
+        <TextView
+            android:id="@+id/post_launch_time_type_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:text="."
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/post_launch_time_number"
+            app:layout_constraintStart_toEndOf="@id/post_launch_time_type"
+            app:layout_constraintTop_toBottomOf="@id/post_user_name" />
+
+        <ImageView
+            android:id="@+id/post_public_privacy_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/public_ic"
+            app:layout_constraintBottom_toBottomOf="@id/post_launch_time_number"
+            app:layout_constraintStart_toEndOf="@id/post_launch_time_type_dot"
+            app:layout_constraintTop_toBottomOf="@id/post_user_name"
+            app:layout_constraintTop_toTopOf="@id/post_launch_time_number" />
+
+        <ImageView
+            android:id="@+id/post_more_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/more_three_hori_dots_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/post_round_image" />
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/app_taxt_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_round_image"
+            toools:text="With these changes, the dot should now be centered
+         both horizontally and vertically within its constraints.
+         Adjust the constraints' relative positioning " />
+
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:adjustViewBounds="true"
+            android:minHeight="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/post_reacts_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_text"
+            toools:src="@drawable/spirit" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_reacts_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/llike_not_filled_ic"
+            app:layout_constraintBottom_toTopOf="@id/like_comment_share_line"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/post_reacts_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/like_comment_share_line"
+            app:layout_constraintStart_toEndOf="@id/post_reacts_type"
+            toools:text="14" />
+
+        <TextView
+            android:id="@+id/post_shares_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/like_comment_share_line"
+            app:layout_constraintEnd_toStartOf="@id/post_share_text"
+            toools:text="1" />
+
+        <TextView
+            android:id="@+id/post_share_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="Share"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/like_comment_share_line"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/like_comment_share_line"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/like_ic"
+                android:paddingStart="30dp"
+                android:text="Like"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_taxt_color"
+                android:textSize="25sp"
+
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/comment_ic"
+                android:paddingStart="10dp"
+                android:text="Comment"
+                android:textColor="@color/app_taxt_color"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/share_ic"
+                android:paddingStart="20dp"
+                android:text="Share"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_taxt_color"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
