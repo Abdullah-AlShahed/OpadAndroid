@@ -91,8 +91,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="1"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo2"
@@ -104,8 +103,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="2"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo3"
@@ -117,8 +115,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="3"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
     </LinearLayout>
 
@@ -142,8 +139,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="4"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo5"
@@ -155,8 +151,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="5"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo6"
@@ -168,8 +163,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="6"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
     </LinearLayout>
 
@@ -193,8 +187,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="7"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo8"
@@ -206,8 +199,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="8"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/xo9"
@@ -219,8 +211,7 @@
             android:onClick="onXOButtonClicked"
             android:tag="9"
             android:textColor="@color/app_taxt_color"
-            android:textSize="80sp"
-            tools:text="x" />
+            android:textSize="80sp" />
 
     </LinearLayout>
 
