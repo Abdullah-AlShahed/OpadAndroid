@@ -28,8 +28,11 @@ public class XOGameActivity extends AppCompatActivity {
 
     public void onXOButtonClicked(View view) {
         Button clickedButton = ((Button) view);
+        //we make sure the button is empty
         if (clickedButton.getText().toString().isEmpty()) {
+            //gameturn to Decide who starts the game
             if (gameTurn == 0) {
+                //counter to switch between X & O turns
                 if (counter % 2 == 0) {
                     clickedButton.setText("X");
                     clickedButton.setTag(1);
@@ -56,6 +59,8 @@ public class XOGameActivity extends AppCompatActivity {
     }
 
     private void checkWinner() {
+        //we check clicked buttons text if 3 texts are the same to say who wins
+        //and make sure that they are not empty when any tag =0 by (!bind.xo1.getTag().equals(0))
         if (bind.xo1.getText().equals(bind.xo2.getText()) && bind.xo1.getText().equals(bind.xo3.getText()) && !bind.xo1.getTag().equals(0)) {
             setWinnerScore(bind.xo1);
             resetBoard();
@@ -91,10 +96,14 @@ public class XOGameActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void setWinnerScore(Button btn) {
         if (btn.getText().equals("X")) {
+            //we take the old score we stored at the player score tag
             String s = bind.tvScoreplayer1.getTag().toString();
             int newScore = Integer.parseInt(s);
+            //and add 5
             newScore += 5;
+            //print the new score
             bind.tvScoreplayer1.setText("Score (" + newScore + ")");
+            //store the new score in the tag
             bind.tvScoreplayer1.setTag(newScore);
             Toast.makeText(this, bind.tvPlayer1.getText() + " Wins", Toast.LENGTH_SHORT).show();
         }
@@ -109,6 +118,7 @@ public class XOGameActivity extends AppCompatActivity {
     }
 
     private void changeGameTurn() {
+        //a variable changes when the game ends to see who will play the next game first
         if (gameTurn == 0) {
             gameTurn = 1;
         } else {
@@ -117,11 +127,13 @@ public class XOGameActivity extends AppCompatActivity {
     }
     @SuppressLint("ResourceAsColor")
     private void onPlayChangeColors(Button clickedButton){
+        //if tag =2 it means O is playing so we change the text color of the button & the text color for the next player turn
         if (clickedButton.getTag().equals(2)) {
             clickedButton.setTextColor(R.color.o_color);
             bind.tvPlayer1.setTextColor(R.color.xogame_turn_color);
             bind.tvPlayer2.setTextColor(R.color.app_offwhite_background_color);
         } else {
+        //else if tag =1 it means X is playing so we change the text color of the button & the text color for the next player turn
             clickedButton.setTextColor(R.color.app_taxt_color);
             bind.tvPlayer1.setTextColor(R.color.app_offwhite_background_color);
             bind.tvPlayer2.setTextColor(R.color.xogame_turn_color);
