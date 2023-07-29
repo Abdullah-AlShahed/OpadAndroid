@@ -80,19 +80,34 @@
     <!-- 2- arrange Pics using Chain-->
     <!-- No need for layout_constraintHorizontal_chainStyle but as an example-->
     <ImageView
-        android:id="@+id/moov"
+        android:id="@+id/route_app_img"
         android:layout_width="0dp"
         android:layout_height="150sp"
         android:layout_margin="8dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/moov"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_screen"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintEnd_toStartOf="@+id/posts_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculator_image_view" />
+
+    <TextView
+        android:id="@+id/route_text"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/app_taxt_color"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:text="Route App"
+        android:textColor="@color/app_offwhite_background_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/route_app_img"
+        app:layout_constraintEnd_toEndOf="@id/route_app_img" />
 
     <ImageView
         android:id="@+id/posts_image"
@@ -105,7 +120,7 @@
         android:src="@drawable/postsimg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/moov"
+        app:layout_constraintStart_toEndOf="@+id/route_app_img"
         app:layout_constraintTop_toBottomOf="@id/xo_image_view" />
 
     <TextView
@@ -143,7 +158,7 @@
         android:src="@drawable/bicycle"
         app:layout_constraintEnd_toStartOf="@id/middle_guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/moov" />
+        app:layout_constraintTop_toBottomOf="@id/route_app_img" />
 
     <ImageView
         android:layout_width="0dp"

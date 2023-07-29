@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.opad.route_app.SplashRouteAppActivity;
+
 public class CatigoriesActivity extends AppCompatActivity
 //2nd Way to make actions with the button
         implements View.OnClickListener {
@@ -15,6 +17,7 @@ public class CatigoriesActivity extends AppCompatActivity
     ImageView calculatorimg;
     ImageView postsimg;
     ImageView xoimg;
+    ImageView routeAppImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,8 @@ public class CatigoriesActivity extends AppCompatActivity
         postsimg.setOnClickListener(this);
         xoimg = findViewById(R.id.xo_image_view);
         xoimg.setOnClickListener(this);
-
+        routeAppImg = findViewById(R.id.route_app_img);
+        routeAppImg.setOnClickListener(this);
 
     }
 
@@ -47,6 +51,9 @@ public class CatigoriesActivity extends AppCompatActivity
             startActivity(intent);
         }if (view.getId() == R.id.xo_image_view) {
             Intent intent =new Intent(CatigoriesActivity.this, XOLoginActivity.class );
+            startActivity(intent);
+        }if (view.getId() == R.id.route_app_img) {
+            Intent intent =new Intent(CatigoriesActivity.this, SplashRouteAppActivity.class );
             startActivity(intent);
         }
 
