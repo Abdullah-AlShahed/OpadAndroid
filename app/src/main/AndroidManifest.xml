@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opad"
         tools:targetApi="31">
-
+        <activity
+            android:name=".route_app.SplashRouteAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".route_app.RouteAppMainActivity"
+            android:exported="false" />
         <activity
             android:name=".XOGameActivity"
             android:exported="false" />
