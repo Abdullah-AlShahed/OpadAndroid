@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,7 +15,6 @@ public class XOGameActivity extends AppCompatActivity {
     ActivityXoGameBinding bind;
     int gameTurn =0;
     int counter =0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,6 @@ public class XOGameActivity extends AppCompatActivity {
         bind.tvPlayer2.setText(player2name);
     }
 
-    @SuppressLint("ResourceAsColor")
     public void onXOButtonClicked(View view) {
         Button clickedButton = ((Button) view);
         if (clickedButton.getText().toString().isEmpty()) {
@@ -40,7 +37,7 @@ public class XOGameActivity extends AppCompatActivity {
                     clickedButton.setText("O");
                     clickedButton.setTag(2);
                 }
-              //  Log.d("XOGameActivity", "X started the game & Counter="+counter+" gameturn="+gameTurn);
+              //  Log.d("XOGameActivity", "X started the game & Counter="+counter+" Game Turn="+gameTurn);
             } else {
                 if (counter % 2 == 0) {
                     clickedButton.setText("O");
@@ -49,19 +46,16 @@ public class XOGameActivity extends AppCompatActivity {
                     clickedButton.setText("X");
                     clickedButton.setTag(1);
                 }
-              //  Log.d("XOGameActivity", "O started the game & Counter="+counter+" gameturn="+gameTurn);
+              //  Log.d("XOGameActivity", "O started the game & Counter="+counter+" Game Turn="+gameTurn);
             }
             counter++;
             checkWinner();
         }
-        if (clickedButton.getTag().equals(2)) {
-            clickedButton.setTextColor(R.color.o_color);
-        } else {
-            clickedButton.setTextColor(R.color.app_taxt_color);
-        }
+        onPlayChangeColors(clickedButton);
+
     }
 
-    public void checkWinner() {
+    private void checkWinner() {
         if (bind.xo1.getText().equals(bind.xo2.getText()) && bind.xo1.getText().equals(bind.xo3.getText()) && !bind.xo1.getTag().equals(0)) {
             setWinnerScore(bind.xo1);
             resetBoard();
@@ -95,7 +89,7 @@ public class XOGameActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void setWinnerScore(Button btn) {
+    private void setWinnerScore(Button btn) {
         if (btn.getText().equals("X")) {
             String s = bind.tvScoreplayer1.getTag().toString();
             int newScore = Integer.parseInt(s);
@@ -114,15 +108,27 @@ public class XOGameActivity extends AppCompatActivity {
         }
     }
 
-    public void changeGameTurn() {
+    private void changeGameTurn() {
         if (gameTurn == 0) {
             gameTurn = 1;
         } else {
             gameTurn = 0;
         }
     }
+    @SuppressLint("ResourceAsColor")
+    private void onPlayChangeColors(Button clickedButton){
+        if (clickedButton.getTag().equals(2)) {
+            clickedButton.setTextColor(R.color.o_color);
+            bind.tvPlayer1.setTextColor(R.color.xogame_turn_color);
+            bind.tvPlayer2.setTextColor(R.color.app_offwhite_background_color);
+        } else {
+            clickedButton.setTextColor(R.color.app_taxt_color);
+            bind.tvPlayer1.setTextColor(R.color.app_offwhite_background_color);
+            bind.tvPlayer2.setTextColor(R.color.xogame_turn_color);
+        }
+    }
 
-    public void resetBoard() {
+    private void resetBoard() {
         changeGameTurn();
         bind.xo1.setText("");
         bind.xo1.setTag(0);

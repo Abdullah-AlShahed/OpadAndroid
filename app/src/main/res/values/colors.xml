@@ -13,4 +13,5 @@
     <color name="red_delet_all">#AC163A</color>
     <color name="faded_white_text_background">#B3FFFFFF</color>
     <color name="o_color">#B300FFC4</color>
+    <color name="xogame_turn_color">#FF5722</color>
 </resources>
