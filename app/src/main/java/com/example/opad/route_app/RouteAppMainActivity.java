@@ -32,10 +32,8 @@ public class RouteAppMainActivity extends AppCompatActivity {
     private void creatRouteCourses() {
         coursesList = new ArrayList<>();
         coursesList.add(new CourseData(R.drawable.android,R.string.android_course_text));
-        coursesList.add(new CourseData(R.drawable.ios,R.string.ios_course_text));
-        coursesList.add(new CourseData(R.drawable.full_stack,R.string.fullStack_course_text));
-
-
+//        coursesList.add(new CourseData(R.drawable.ios,R.string.ios_course_text));
+//        coursesList.add(new CourseData(R.drawable.full_stack,R.string.fullStack_course_text));
     }
 
 
