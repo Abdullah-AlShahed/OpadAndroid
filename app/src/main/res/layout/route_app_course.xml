@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/android_route"
+            android:id="@+id/route_course_image"
             android:layout_width="match_parent"
             android:layout_height="215dp"
             android:scaleType="fitXY"
@@ -26,7 +26,7 @@
             tools:src="@drawable/android" />
 
         <Button
-            android:id="@+id/android_route_btn"
+            android:id="@+id/route_course_btn"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:textColor="@color/app_offwhite_background_color"
@@ -36,7 +36,7 @@
             android:fontFamily="@font/merienda"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/android_route"
+            app:layout_constraintTop_toBottomOf="@id/route_course_image"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Android Course" />
     </androidx.constraintlayout.widget.ConstraintLayout>

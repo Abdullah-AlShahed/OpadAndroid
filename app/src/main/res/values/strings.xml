@@ -3,4 +3,8 @@
     <string name="virtual_reiality_text">Virtual Reiality</string>
     <string name="thinking_text">Thinking</string>
     <string name="x_o_game_text">X O Game</string>
+    <string name="android_course_text">Android Course</string>
+    <string name="ios_course_text">IOS Course</string>
+    <string name="fullStack_course_text">Full Stack Course</string>
+
 </resources>
