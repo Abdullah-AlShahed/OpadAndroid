@@ -11,6 +11,6 @@ public class RouteAppMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_route_app_main);
+        setContentView(R.layout.route_app_course);
     }
 }

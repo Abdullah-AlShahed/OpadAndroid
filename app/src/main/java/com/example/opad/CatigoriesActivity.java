@@ -8,7 +8,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.opad.calculator.CalculatorActivity;
+import com.example.opad.posts.PostsFeedActivity;
 import com.example.opad.route_app.SplashRouteAppActivity;
+import com.example.opad.xo_game.XOLoginActivity;
 
 public class CatigoriesActivity extends AppCompatActivity
 //2nd Way to make actions with the button

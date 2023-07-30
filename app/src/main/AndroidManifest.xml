@@ -19,16 +19,16 @@
             android:name=".route_app.RouteAppMainActivity"
             android:exported="false" />
         <activity
-            android:name=".XOGameActivity"
+            android:name=".xo_game.XOGameActivity"
             android:exported="false" />
         <activity
-            android:name=".XOLoginActivity"
+            android:name=".xo_game.XOLoginActivity"
             android:exported="true" />
         <activity
-            android:name=".CalculatorActivity"
+            android:name=".calculator.CalculatorActivity"
             android:exported="true" />
         <activity
-            android:name=".PostsFeedActivity"
+            android:name=".posts.PostsFeedActivity"
             android:exported="false" />
         <activity
             android:name=".CatigoriesActivity"

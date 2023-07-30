@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    app:cardCornerRadius="25dp"
+    android:layout_margin="5dp"
+    android:elevation="@dimen/cardview_default_elevation"
+    tools:context=".route_app.RouteAppMainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/android_route"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/android" />
+
+        <Button
+            android:id="@+id/android_route_btn"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:textColor="@color/app_offwhite_background_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/route_app_color"
+            android:fontFamily="@font/merienda"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/android_route"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Android Course" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

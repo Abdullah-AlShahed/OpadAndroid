@@ -1,4 +1,4 @@
-package com.example.opad;
+package com.example.opad.xo_game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.opad.R;
 import com.example.opad.databinding.ActivityXoGameBinding;
 
 

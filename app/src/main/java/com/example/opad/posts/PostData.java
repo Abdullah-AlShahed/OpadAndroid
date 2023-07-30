@@ -1,4 +1,4 @@
-package com.example.opad;
+package com.example.opad.posts;
 
 public class PostData {
 
