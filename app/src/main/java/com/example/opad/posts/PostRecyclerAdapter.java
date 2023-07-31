@@ -40,7 +40,6 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapte
         holder.post_launch_time_type.setText(item.post_launch_time_type);
         holder.post_reacts_number.setText(String.valueOf(item.post_reacts_number));
         holder.post_shares_number.setText(String.valueOf(item.post_shares_number));
-
     }
 
     @Override

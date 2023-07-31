@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.opad.R;
-import com.example.opad.posts.PostRecyclerAdapter;
 
 import java.util.List;
 
@@ -37,6 +36,23 @@ public class RouteAppRecyclerAdapter extends RecyclerView.Adapter<RouteAppRecycl
         CourseData item = courses.get(position);
         holder.image.setImageResource(item.courseImg);
         holder.btnText.setText(item.courseBtnText);
+        holder.btnText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onButtonClickListener.onClick(position, item);
+            }
+        });
+    }
+
+
+    OnItemClickListener onButtonClickListener;
+
+    public void setOnButtonClickListener(OnItemClickListener onButtonClickListener) {
+        this.onButtonClickListener = onButtonClickListener;
+    }
+
+    interface OnItemClickListener {
+        void onClick(int position, CourseData item);
     }
 
     @Override
@@ -50,7 +66,7 @@ public class RouteAppRecyclerAdapter extends RecyclerView.Adapter<RouteAppRecycl
 
         public CourseViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.image = itemView.findViewById(R.id.route_app_img);
+            this.image = itemView.findViewById(R.id.route_course_image);
             this.btnText = itemView.findViewById(R.id.route_course_btn);
         }
     }

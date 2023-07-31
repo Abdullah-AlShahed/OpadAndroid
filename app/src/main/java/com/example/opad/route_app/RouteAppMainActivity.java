@@ -1,6 +1,7 @@
 package com.example.opad.route_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class RouteAppMainActivity extends AppCompatActivity {
 
     RouteAppRecyclerAdapter adapter;
 
+    RecyclerView.LayoutManager layoutManager;
     List<CourseData> coursesList;
 
     @Override
@@ -25,16 +27,25 @@ public class RouteAppMainActivity extends AppCompatActivity {
         routeCoursesRecyclerView = findViewById(R.id.route_course_rv);
         creatRouteCourses();
         adapter = new RouteAppRecyclerAdapter(coursesList);
-        routeCoursesRecyclerView.setAdapter(adapter);
+        layoutManager =new LinearLayoutManager(this);
+        adapter.setOnButtonClickListener(new RouteAppRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(int position, CourseData item) {
 
+            }
+        });
+
+
+
+        routeCoursesRecyclerView.setAdapter(adapter);
+        routeCoursesRecyclerView.setLayoutManager(layoutManager);
     }
 
     private void creatRouteCourses() {
         coursesList = new ArrayList<>();
         coursesList.add(new CourseData(R.drawable.android,R.string.android_course_text));
-//        coursesList.add(new CourseData(R.drawable.ios,R.string.ios_course_text));
-//        coursesList.add(new CourseData(R.drawable.full_stack,R.string.fullStack_course_text));
+        coursesList.add(new CourseData(R.drawable.ios,R.string.ios_course_text));
+        coursesList.add(new CourseData(R.drawable.full_stack,R.string.fullStack_course_text));
     }
-
 
 }
