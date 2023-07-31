@@ -31,7 +31,7 @@ public class RouteAppMainActivity extends AppCompatActivity {
         adapter.setOnButtonClickListener(new RouteAppRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position, CourseData item) {
-
+                
             }
         });
 
