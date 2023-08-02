@@ -146,7 +146,6 @@
         app:layout_constraintBottom_toTopOf="@id/btn6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn4"
-
         app:layout_constraintTop_toBottomOf="@id/tv_result_view"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -176,7 +175,6 @@
         android:text="7"
         android:textColor="@color/app_taxt_color"
         android:textSize="50sp"
-
         app:layout_constraintBottom_toTopOf="@+id/btn7"
         app:layout_constraintEnd_toStartOf="@id/btn6_1"
         app:layout_constraintStart_toStartOf="parent"

@@ -2,7 +2,9 @@ package com.example.opad.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -52,7 +54,6 @@ public class CalculatorActivity extends AppCompatActivity {
             clearCalculator();
         }
         rtvText.append(clickedOperatorText);
-
         if ("SR".equals(clickedOperatorText) || "^2".equals(clickedOperatorText)) {
             savedOperator = clickedOperatorText;
             savedNum = result_tv.getText().toString();
@@ -80,18 +81,15 @@ public class CalculatorActivity extends AppCompatActivity {
         double num2 = Double.parseDouble(lastNum);
         double result=0.0;
 
-
         if (savedOperator.equals("+")) {
              result = num1 + num2;
-
         } else if (savedOperator.equals("-")) {
              result = num1 - num2;
-        } else if (savedOperator.equals("*")) {
+        } else if (savedOperator.equals("x")) {
              result = (double) Math.multiplyExact((long) num1,(long) num2);
         } else if (savedOperator.equals("/")) {
             if (num2 != 0) {
                  result = num1 / num2;
-
             } else {
                 clearCalculator();
                 result_tv.setText("Error: Division by zero");
