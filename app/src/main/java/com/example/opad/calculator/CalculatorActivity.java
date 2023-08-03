@@ -47,7 +47,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
         result_tv.append(clickedText);
         top_tv.append(clickedText);
+        result_tv.setTag(0);
         equalbtn.setTag(0);
+
     }
 
     String savedNum = "";
@@ -55,11 +57,16 @@ public class CalculatorActivity extends AppCompatActivity {
     String lastNum = "";
 
     public void onOperatorClick(View view) {
+        Button clickedOperator = (Button) view;
+        String clickedOperatorText = clickedOperator.getText().toString();
         if (!result_tv.getText().toString().isEmpty()) {
-            equalbtn.setTag(0);
-            Button clickedOperator = (Button) view;
-            String clickedOperatorText = clickedOperator.getText().toString();
-            if (savedOperator.isEmpty()) {
+
+            if(clickedOperatorText.equals("SR")||clickedOperatorText.equals("^2")){
+                savedNum = result_tv.getText().toString();
+                savedOperator = clickedOperatorText;
+                calcSRandPowTwo(savedNum,savedOperator);
+            }
+            else if (savedOperator.isEmpty()) {
                 savedNum = result_tv.getText().toString();
                 savedOperator = clickedOperatorText;
                 result_tv.setText("");
@@ -72,14 +79,16 @@ public class CalculatorActivity extends AppCompatActivity {
                 result_tv.setText("");
                 top_tv.setText(savedNum + " " + savedOperator + " ");
             }
+            equalbtn.setTag(0);
+            result_tv.setTag(0);
         }
+
     }
 
 
     private String calc(String savedNum, String savedOperator, String lastNum) {
         double num1 = Double.parseDouble(savedNum);
         double num2 = Double.parseDouble(lastNum);
-
         double result = 0.0;
 
         if (savedOperator.equals("+")) {
@@ -96,31 +105,46 @@ public class CalculatorActivity extends AppCompatActivity {
                 result_tv.setText("Error: Division by zero");
                 return "";
             }
-        } else if (savedOperator.equals("SR")) {
-            if (num1 >= 0) {
-                result = Math.sqrt(num1);
-                Log.d(TAG, "calc() called with: savedNum = [" + savedNum + "], savedOperator = [" + savedOperator + "], lastNum = [" + lastNum + "], Result = [" + result + "]");
-            } else {
-                clearCalculator();
-                result_tv.setText("Error: Invalid input for square root");
-                return "";
-            }
-        } else if (savedOperator.equals("^2")) {
-            result = Math.pow(num1, 2);
-            Log.d(TAG, "calc() called with: savedNum = [" + savedNum + "], savedOperator = [" + savedOperator + "], lastNum = [" + lastNum + "], Result = [" + result + "]");
         }
         return "" + result;
     }
-
+    private void calcSRandPowTwo(String savedNum, String savedOperator) {
+        double num1 = Double.parseDouble(savedNum);
+        double result = 0.0;
+        if (savedOperator.equals("SR")) {
+            if (num1 >= 0) {
+                result = Math.sqrt(num1);
+                result_tv.setText(String.valueOf(result));
+                checkDigitLength();
+                result_tv.setTag("sr");
+            } else {
+                clearCalculator();
+                result_tv.setText("Error: Invalid input for square root");
+            }
+        } else if (savedOperator.equals("^2")) {
+            result = Math.pow(num1, 2);
+            result_tv.setText(String.valueOf(result));
+            result_tv.setTag("^2");
+            checkDigitLength();
+          //  Log.d(TAG, "calc() called with: savedNum = [" + savedNum + "], savedOperator = [" + savedOperator + "], lastNum = [" + lastNum + "], Result = [" + result + "]");
+        }
+    }
 
     public void onEqualClick(View view) {
-        equalbtn.setTag(1);
-        Button clicked = (Button) view;
-        String clickedText = clicked.getText().toString();
-        lastNum = result_tv.getText().toString();
-        savedNum = calc(savedNum, savedOperator, lastNum);
-        result_tv.setText(savedNum);
-
+        if (!result_tv.getText().toString().isEmpty()) {
+            if(result_tv.getTag().equals("sr")||result_tv.getTag().equals("^2")){
+                return;
+            }
+            if(savedOperator.isEmpty()){
+                return;
+            }
+            equalbtn.setTag(1);
+            Button clicked = (Button) view;
+            String clickedText = clicked.getText().toString();
+            lastNum = result_tv.getText().toString();
+            savedNum = calc(savedNum, savedOperator, lastNum);
+            result_tv.setText(savedNum);
+        }
     }
 
     //****************************************************************
@@ -152,7 +176,8 @@ public class CalculatorActivity extends AppCompatActivity {
         savedOperator = "";
         result_tv.setText("");
         top_tv.setText("");
-
+        equalbtn.setTag(0);
+        result_tv.setTag(0);
     }
 
 }
