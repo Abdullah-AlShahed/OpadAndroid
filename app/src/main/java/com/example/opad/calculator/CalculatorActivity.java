@@ -4,7 +4,6 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +23,8 @@ public class CalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         result_tv = findViewById(R.id.tv_result_view);
-        equalbtn = findViewById(R.id.btn9_2);
+        equalbtn = findViewById(R.id.btn_equal);
         equalbtn.setTag(0);
-
         top_tv = findViewById(R.id.tv_top_small);
 
     }
@@ -44,12 +42,10 @@ public class CalculatorActivity extends AppCompatActivity {
             }
         }
         checkDigitLength();
-
         result_tv.append(clickedText);
         top_tv.append(clickedText);
         result_tv.setTag(0);
         equalbtn.setTag(0);
-
     }
 
     String savedNum = "";
