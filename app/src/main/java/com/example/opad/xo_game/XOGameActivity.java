@@ -7,15 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
+import androidx.core.content.ContextCompat;
 import com.example.opad.R;
 import com.example.opad.databinding.ActivityXoGameBinding;
 
 
 public class XOGameActivity extends AppCompatActivity {
     ActivityXoGameBinding bind;
-    int gameTurn =0;
-    int counter =0;
+    int gameTurn ;
+    int counter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,8 @@ public class XOGameActivity extends AppCompatActivity {
         String player2name = getIntent().getStringExtra("n2");
         bind.tvPlayer1.setText(player1name);
         bind.tvPlayer2.setText(player2name);
+        counter=0;
+        gameTurn=0;
     }
 
     public void onXOButtonClicked(View view) {
@@ -54,8 +56,9 @@ public class XOGameActivity extends AppCompatActivity {
             }
             counter++;
             checkWinner();
+            onPlayChangeColors(clickedButton);
         }
-        onPlayChangeColors(clickedButton);
+
 
     }
 
@@ -89,6 +92,7 @@ public class XOGameActivity extends AppCompatActivity {
         } else {
             if (counter == 9) {
                 Toast.makeText(this, "DRAW", Toast.LENGTH_SHORT).show();
+                changeGameTurn();
                 resetBoard();
             }
         }
@@ -106,6 +110,8 @@ public class XOGameActivity extends AppCompatActivity {
             bind.tvScoreplayer1.setText("Score (" + newScore + ")");
             //store the new score in the tag
             bind.tvScoreplayer1.setTag(newScore);
+            //make x starts the next game
+            gameTurn=0;
             Toast.makeText(this, bind.tvPlayer1.getText() + " Wins", Toast.LENGTH_SHORT).show();
         }
         if (btn.getText().equals("O")) {
@@ -114,6 +120,7 @@ public class XOGameActivity extends AppCompatActivity {
             newScore += 5;
             bind.tvScoreplayer2.setText("Score (" + newScore + ")");
             bind.tvScoreplayer2.setTag(newScore);
+            gameTurn=1;
             Toast.makeText(this, bind.tvPlayer2.getText() + " Wins", Toast.LENGTH_SHORT).show();
         }
     }
@@ -128,21 +135,15 @@ public class XOGameActivity extends AppCompatActivity {
     }
     @SuppressLint("ResourceAsColor")
     private void onPlayChangeColors(Button clickedButton){
-        //if tag =2 it means O is playing so we change the text color of the button & the text color for the next player turn
+        //if tag =2 it means O is playing so we change the text color of the button
         if (clickedButton.getTag().equals(2)) {
-            clickedButton.setTextColor(R.color.o_color);
-            bind.tvPlayer1.setTextColor(R.color.xogame_turn_color);
-            bind.tvPlayer2.setTextColor(R.color.app_offwhite_background_color);
+            clickedButton.setTextColor(ContextCompat.getColor(this, R.color.orange_color));
         } else {
-        //else if tag =1 it means X is playing so we change the text color of the button & the text color for the next player turn
-            clickedButton.setTextColor(R.color.app_taxt_color);
-            bind.tvPlayer1.setTextColor(R.color.app_offwhite_background_color);
-            bind.tvPlayer2.setTextColor(R.color.xogame_turn_color);
+            clickedButton.setTextColor(ContextCompat.getColor(this, R.color.app_taxt_color));
         }
     }
 
     private void resetBoard() {
-        changeGameTurn();
         bind.xo1.setText("");
         bind.xo1.setTag(0);
         bind.xo2.setText("");

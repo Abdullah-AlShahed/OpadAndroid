@@ -47,7 +47,6 @@ public class CalculatorActivity extends AppCompatActivity {
         result_tv.setTag(0);
         equalbtn.setTag(0);
     }
-
     String savedNum = "";
     String savedOperator = "";
     String lastNum = "";
