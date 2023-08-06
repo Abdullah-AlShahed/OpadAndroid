@@ -1,5 +1,6 @@
 package com.example.opad;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.opad.calculator.CalculatorActivity;
+import com.example.opad.contacts.ContactsMainActivity;
 import com.example.opad.posts.PostsFeedActivity;
 import com.example.opad.route_app.SplashRouteAppActivity;
 import com.example.opad.xo_game.XOLoginActivity;
@@ -21,6 +23,7 @@ public class CatigoriesActivity extends AppCompatActivity
     ImageView postsimg;
     ImageView xoimg;
     ImageView routeAppImg;
+    ImageView contactsImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class CatigoriesActivity extends AppCompatActivity
         xoimg.setOnClickListener(this);
         routeAppImg = findViewById(R.id.route_app_img);
         routeAppImg.setOnClickListener(this);
+        contactsImg = findViewById(R.id.contacts_img);
+        contactsImg.setOnClickListener(this);
 
     }
 
@@ -57,6 +62,9 @@ public class CatigoriesActivity extends AppCompatActivity
             startActivity(intent);
         }if (view.getId() == R.id.route_app_img) {
             Intent intent =new Intent(CatigoriesActivity.this, SplashRouteAppActivity.class );
+            startActivity(intent);
+        }if (view.getId() == R.id.contacts_img) {
+            Intent intent =new Intent(CatigoriesActivity.this, ContactsMainActivity.class );
             startActivity(intent);
         }
 

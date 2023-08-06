@@ -148,17 +148,31 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/bicycle_image"
+        android:id="@+id/contacts_img"
         android:layout_width="0dp"
         android:layout_height="150sp"
         android:layout_margin="8dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/bicycle"
+        android:src="@drawable/contact"
         app:layout_constraintEnd_toStartOf="@id/middle_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/route_app_img" />
+    <TextView
+        android:id="@+id/contacts_taxt"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/app_taxt_color"
+        android:fontFamily="@font/merienda"
+        android:gravity="center"
+        android:text="Contacts"
+        android:textColor="@color/app_offwhite_background_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/contacts_img"
+        app:layout_constraintEnd_toEndOf="@id/contacts_img" />
 
     <ImageView
         android:layout_width="0dp"
@@ -181,7 +195,7 @@
         android:weightSum="200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bicycle_image">
+        app:layout_constraintTop_toBottomOf="@id/contacts_img">
 
         <ImageView
             android:id="@+id/ideas_image"
