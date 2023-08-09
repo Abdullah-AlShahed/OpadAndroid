@@ -1,16 +1,22 @@
-package com.example.opad.contacts;
+package com.example.opad.contacts
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.example.opad.R
 
-import android.os.Bundle;
+class ContactsMainActivity : AppCompatActivity() {
 
-import com.example.opad.R;
+    lateinit var contactrv:RecyclerView
+    lateinit var adapter: ContactsRecyclerAdapter
+    var contactList:MutableList<Contact>?=null
 
-public class ContactsMainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts_main);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_contacts_main)
     }
+
+
+
 }
