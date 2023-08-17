@@ -1,11 +1,11 @@
 package com.example.opad.route_app;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
 
 import com.example.opad.R;
 
@@ -30,24 +30,22 @@ public class RouteAppMainActivity extends AppCompatActivity {
         adapter = new RouteAppRecyclerAdapter(coursesList);
         layoutManager = new LinearLayoutManager(this);
         Intent intent = new Intent(RouteAppMainActivity.this, CoursesActivity.class);
-        adapter.setOnButtonClickListener(new RouteAppRecyclerAdapter.OnItemClickListener() {
-            @Override
-            public void onClick(int position, CourseData item) {
-                if (item.courseBtnText==R.string.android_course_text) {
-                    intent.putExtra("courseImg", R.drawable.android);
-                    intent.putExtra("courseBtnText", R.string.android_content);
-                }
-                if (item.courseBtnText==R.string.ios_course_text) {
-                    intent.putExtra("courseImg", R.drawable.ios);
-                    intent.putExtra("courseBtnText", R.string.ios_content);
-                }
-                if (item.courseBtnText==R.string.fullStack_course_text) {
-                    intent.putExtra("courseImg", R.drawable.full_stack);
-                    intent.putExtra("courseBtnText", R.string.fullStack_content);
-                }
-                startActivity(intent);
+        adapter.setOnButtonClickListener((position, item) -> {
+            if (item.courseBtnText == R.string.android_course_text) {
+                intent.putExtra("courseImg", R.drawable.android);
+                intent.putExtra("courseBtnText", R.string.android_content);
             }
+            if (item.courseBtnText == R.string.ios_course_text) {
+                intent.putExtra("courseImg", R.drawable.ios);
+                intent.putExtra("courseBtnText", R.string.ios_content);
+            }
+            if (item.courseBtnText == R.string.fullStack_course_text) {
+                intent.putExtra("courseImg", R.drawable.full_stack);
+                intent.putExtra("courseBtnText", R.string.fullStack_content);
+            }
+            startActivity(intent);
         });
+
         routeCoursesRecyclerView.setAdapter(adapter);
         routeCoursesRecyclerView.setLayoutManager(layoutManager);
     }

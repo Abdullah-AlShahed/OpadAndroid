@@ -36,12 +36,9 @@ public class RouteAppRecyclerAdapter extends RecyclerView.Adapter<RouteAppRecycl
         CourseData item = courses.get(position);
         holder.image.setImageResource(item.courseImg);
         holder.btnText.setText(item.courseBtnText);
-        holder.btnText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onButtonClickListener.onClick(position, item);
-            }
-        });
+        holder.btnText.setOnClickListener(view -> onButtonClickListener.onClick(position, item));
+        // holder.image.setOnClickListener(view -> opad.onClick(position,item));
+
     }
 
 
@@ -50,6 +47,12 @@ public class RouteAppRecyclerAdapter extends RecyclerView.Adapter<RouteAppRecycl
     public void setOnButtonClickListener(OnItemClickListener onButtonClickListener) {
         this.onButtonClickListener = onButtonClickListener;
     }
+
+//    OnItemClickListener opad;
+//
+//    public void setOpad(OnItemClickListener opad) {
+//        this.opad = opad;
+//    }
 
     interface OnItemClickListener {
         void onClick(int position, CourseData item);

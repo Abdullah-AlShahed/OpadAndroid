@@ -13,6 +13,7 @@
         android:layout_height="60dp"
         android:layout_margin="10dp"
         android:queryHint="Search..."
+        android:background="@color/search_bar_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

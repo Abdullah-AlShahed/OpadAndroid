@@ -14,11 +14,10 @@
         android:layout_marginTop="15dp"
         android:clickable="true"
         android:focusable="true"
+        android:src="@drawable/contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/contact"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/enter_contact_name_et"
@@ -29,6 +28,7 @@
         android:imeOptions="actionNext"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:maxLength="30"
         android:paddingStart="12dp"
         android:textColor="@color/app_taxt_color"
         android:textColorHint="@color/app_taxt_color"
@@ -43,7 +43,10 @@
         android:layout_margin="9dp"
         android:hint="Enter Number"
         android:imeOptions="actionNext"
+        android:autofillHints="phone"
         android:minHeight="48dp"
+        android:inputType="phone"
+        android:maxLength="11"
         android:paddingStart="12dp"
         android:textColor="@color/app_taxt_color"
         android:textColorHint="@color/app_taxt_color"

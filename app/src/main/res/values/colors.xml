@@ -7,4 +7,5 @@
     <color name="orange_color">#FF5722</color>
     <color name="route_app_color">#002B6A</color>
     <color name="cancel_red_color">#A51515</color>
+    <color name="search_bar_color">#8F9E9D</color>
 </resources>
